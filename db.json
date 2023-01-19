@@ -15,10 +15,24 @@
       "cartoon": false
     },
     {
-      "id": 3
+      "id": 4
     },
     {
-      "id": 4
+      "id": 5
+    },
+    {
+      "name": {
+        "0": {},
+        "1": {}
+      },
+      "id": 7
+    },
+    {
+      "name": "qq",
+      "weapon": "qq",
+      "occupation": "qq",
+      "cartoon": true,
+      "id": 8
     }
   ]
 }

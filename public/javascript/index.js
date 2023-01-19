@@ -26,10 +26,10 @@ window.addEventListener("load", () => {
   document
     .getElementById("new-character-form")
     .addEventListener("submit", function (event) {
-      let name = document.getElementsByName("name").value;
-      let weapon = document.getElementsByName("weapon").value;
-      let occupation = document.getElementsByName("occupation").value;
-      let cartoon = document.getElementsByName("cartoon").checked;
+      let name = document.getElementsByName("name")[0].value;
+      let weapon = document.getElementsByName("weapon")[0].value;
+      let occupation = document.getElementsByName("occupation")[0].value;
+      let cartoon = document.getElementsByName("cartoon")[0].checked;
 
       let newCharacter = { name, weapon, occupation, cartoon };
       charactersAPI.createOneRegister(newCharacter);
