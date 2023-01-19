@@ -14,7 +14,10 @@ window.addEventListener("load", () => {
 
   document
     .getElementById("delete-one")
-    .addEventListener("click", function (event) {});
+    .addEventListener("click", function (event) {
+      let idValue = document.getElementsByName("character-id-delete");
+      charactersAPI.deleteOneRegister(idValue[0].value);
+    });
 
   document
     .getElementById("edit-character-form")

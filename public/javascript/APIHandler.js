@@ -63,6 +63,6 @@ class APIHandler {
   }
 
   deleteOneRegister(characterid) {
-    return this.api.delete(`/characters/${characterid}`);
+    return this.api.delete(`${this.BASE_URL}/characters/${characterid}`);
   }
 }
