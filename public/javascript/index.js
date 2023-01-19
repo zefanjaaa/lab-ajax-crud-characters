@@ -33,11 +33,11 @@ window.addEventListener("load", () => {
   document
     .getElementById("edit-character-form")
     .addEventListener("submit", function (event) {
-      let id = document.getElementsByName("chr-id")[0].value;
-      let name = document.getElementsByName("name")[0].value;
-      let weapon = document.getElementsByName("weapon")[0].value;
-      let occupation = document.getElementsByName("occupation")[0].value;
-      let cartoon = document.getElementsByName("cartoon")[0].checked;
+      let id = document.getElementsByName("chr-id")[1].value;
+      let name = document.getElementsByName("name")[1].value;
+      let weapon = document.getElementsByName("weapon")[1].value;
+      let occupation = document.getElementsByName("occupation")[1].value;
+      let cartoon = document.getElementsByName("cartoon")[1].checked;
       let editCharacter = { id, name, weapon, occupation, cartoon };
       charactersAPI.updateOneRegister(editCharacter);
     });
