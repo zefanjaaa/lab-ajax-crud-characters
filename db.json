@@ -15,24 +15,11 @@
       "cartoon": false
     },
     {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "name": {
-        "0": {},
-        "1": {}
-      },
-      "id": 7
-    },
-    {
-      "name": "qq",
-      "weapon": "qq",
-      "occupation": "qq",
+      "name": "bobby",
+      "weapon": "woodenstick",
+      "occupation": "superhero",
       "cartoon": true,
-      "id": 8
+      "id": 9
     }
   ]
 }
