@@ -50,9 +50,38 @@ class APIHandler {
     );
   };
 
-  getOneRegister(characterid) {
-    return this.api.get(`/characters/${characterid}`);
-  }
+  getOneRegister = (characterId) => {
+    const oneCharacterView = document.querySelector(".characters-container");
+    return this.api.get(`/characters/${characterId}`).then((result) => {
+      console.log(result.data);
+      const oneCharacter = result.data;
+      oneCharacterView.innerHTML = `<div class="character-info">
+    <div class="id">Id: ${oneCharacter.id}</div>
+    <div class="name">Name: ${oneCharacter.name}</div>
+    <div class="occupation">Occupation: ${oneCharacter.occupation}</div>
+    <div class="cartoon">Is a Cartoon? ${oneCharacter.cartoon}</div>
+    <div class="weapon">Weapon: ${oneCharacter.weapon}</div>
+  </div>`;
+    });
+  };
+
+  // getOneRegister(characterid) {
+  //   const oneCharacterView = document.querySelector(".characters-container");
+  //   return this.api
+  //     .get(`${this.BASE_URL}/characters/${characterid}`)
+  //     .then((result) => {
+     
+  //       oneCharacterView.innerHTML = {};
+
+  //       // for (let i = 0; i < oneCharacter.length; i++) {
+  //       //   oneCharacterView.innerHTML =
+  //       //     document.querySelector(".character-info",oneCharacter);
+  //       const oneCharacter = result.data
+  //       // document.querySelector('.character-info' , oneCharacter)
+  //       oneCharacterView.innerHTML = oneCharacter
+  //       })
+      
+  // }
 
   createOneRegister(characterInfo) {
     return this.api
@@ -67,7 +96,14 @@ class APIHandler {
   }
 
   updateOneRegister(characterid, characterInfo) {
-    return this.api.put(`/characters/${characterid}`, characterInfo);
+    return this.api
+      .put(`${this.BASE_URL}/characters/${characterid}`, characterInfo)
+      .then((characterInfo, characterid) => {
+        console.log("character updated", characterInfo, characterid);
+      })
+      .catch((error) => {
+        console.log("There is an error", error);
+      });
   }
 
   deleteOneRegister(characterid) {

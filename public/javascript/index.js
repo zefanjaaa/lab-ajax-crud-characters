@@ -8,20 +8,39 @@ window.addEventListener("load", () => {
       charactersAPI.getFullList();
     });
 
+  // document
+  //   .getElementById("fetch-one")
+  //   .addEventListener("click", function (event) {
+  //     let fetchOne = document.getElementsByName("character-id");
+  //     charactersAPI.getOneRegister(fetchOne[0].value);
+  //   });
   document
     .getElementById("fetch-one")
-    .addEventListener("click", function (event) {});
+    .addEventListener("click", function (event) {
+      // Iteration 3.2
+      const characterId = document.querySelector(".character-id").value;
+      charactersAPI.getOneRegister(characterId);
+    });
 
   document
     .getElementById("delete-one")
     .addEventListener("click", function (event) {
       let idValue = document.getElementsByName("character-id-delete");
       charactersAPI.deleteOneRegister(idValue[0].value);
+      charactersAPI.getFullList();
     });
 
   document
     .getElementById("edit-character-form")
-    .addEventListener("submit", function (event) {});
+    .addEventListener("submit", function (event) {
+      let id = document.getElementsByName("chr-id")[0].value;
+      let name = document.getElementsByName("name")[0].value;
+      let weapon = document.getElementsByName("weapon")[0].value;
+      let occupation = document.getElementsByName("occupation")[0].value;
+      let cartoon = document.getElementsByName("cartoon")[0].checked;
+      let editCharacter = { id, name, weapon, occupation, cartoon };
+      charactersAPI.updateOneRegister(editCharacter);
+    });
 
   document
     .getElementById("new-character-form")

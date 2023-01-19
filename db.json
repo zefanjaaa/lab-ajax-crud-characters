@@ -20,6 +20,13 @@
       "occupation": "superhero",
       "cartoon": true,
       "id": 9
+    },
+    {
+      "name": "bobby2",
+      "weapon": "metalstick",
+      "occupation": "supersuperhero",
+      "cartoon": false,
+      "id": 10
     }
   ]
 }
