@@ -13,6 +13,12 @@
       "occupation": "Jedi Knight",
       "weapon": "Lightsaber",
       "cartoon": false
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
     }
   ]
 }

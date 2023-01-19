@@ -55,7 +55,15 @@ class APIHandler {
   }
 
   createOneRegister(characterInfo) {
-    return this.api.post("/characters", characterInfo);
+    return this.api
+      .post(`${this.BASE_URL}/characters`, characterInfo)
+      .then((characterInfo) => {
+        console.log("New Character", characterInfo);
+        this.getFullList();
+      })
+      .catch((error) => {
+        console.log("There is an error", error);
+      });
   }
 
   updateOneRegister(characterid, characterInfo) {
